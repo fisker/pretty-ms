@@ -24,7 +24,7 @@ const format = (milliseconds, options) => {
 		throw new Error(`
 			Result different for:
 			- Number: ${milliseconds}
-			- BigInt: ${bigIntResult.milliseconds}
+			- BigInt: ${bigIntResult.value}n
 		`)
 	}
 

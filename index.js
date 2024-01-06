@@ -5,8 +5,8 @@ const pluralize = (word, count) => count === 1 ? word : `${word}s`;
 const SECOND_ROUNDING_EPSILON = 0.000_000_1;
 
 export default function prettyMilliseconds(milliseconds, options = {}) {
-	if (!Number.isFinite(milliseconds)) {
-		throw new TypeError('Expected a finite number');
+	if (!Number.isFinite(milliseconds) && typeof milliseconds === 'bigint') {
+		throw new TypeError('Expected a finite number or bigint');
 	}
 
 	if (options.colonNotation) {
